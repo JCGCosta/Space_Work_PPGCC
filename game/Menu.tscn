@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/button.png" type="Texture" id=1]
 [ext_resource path="res://assets/back.png" type="Texture" id=2]
 [ext_resource path="res://Start_btn.gd" type="Script" id=3]
+[ext_resource path="res://assets/planets_2.png" type="Texture" id=4]
+[ext_resource path="res://Options_btn.gd" type="Script" id=5]
+[ext_resource path="res://Record_btn.gd" type="Script" id=6]
+[ext_resource path="res://Exit_btn.gd" type="Script" id=7]
 
 [sub_resource type="ImageTexture" id=1]
 
@@ -11,33 +15,128 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 513.724, 301.412 )
+position = Vector2( 513.724, 300.412 )
 rotation = -6.28319
 scale = Vector2( 0.500141, 0.388641 )
 texture = ExtResource( 2 )
 
-[node name="Start_btn" type="Button" parent="CanvasLayer"]
+[node name="Start" type="Button" parent="CanvasLayer"]
 margin_left = 427.0
-margin_top = 338.0
+margin_top = 306.0
 margin_right = 596.0
-margin_bottom = 382.0
+margin_bottom = 350.0
 text = "Start"
 icon = SubResource( 1 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Start_btn"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Start"]
 position = Vector2( 92, 24.625 )
 scale = Vector2( 0.856223, 0.626289 )
 texture = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="CanvasLayer/Start_btn"]
+[node name="Label" type="Label" parent="CanvasLayer/Start"]
 modulate = Color( 0.356863, 0.0784314, 0.545098, 1 )
 margin_left = 16.0
 margin_top = 17.0
 margin_right = 159.0
 margin_bottom = 48.0
 size_flags_vertical = 1
-text = "START
+text = "iniciar jogo
 "
 align = 1
 uppercase = true
+
+[node name="Record_btn" type="Button" parent="CanvasLayer"]
+margin_left = 428.0
+margin_top = 370.0
+margin_right = 597.0
+margin_bottom = 414.0
+text = "Start"
+icon = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Record_btn"]
+position = Vector2( 92, 23.625 )
+scale = Vector2( 0.856223, 0.626289 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Record_btn"]
+modulate = Color( 0.356863, 0.0784314, 0.545098, 1 )
+margin_left = 16.0
+margin_top = 17.0
+margin_right = 159.0
+margin_bottom = 48.0
+size_flags_vertical = 1
+text = "recordes"
+align = 1
+uppercase = true
+
+[node name="Options_btn" type="Button" parent="CanvasLayer"]
+margin_left = 429.0
+margin_top = 432.0
+margin_right = 598.0
+margin_bottom = 476.0
+text = "Start"
+icon = SubResource( 1 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Options_btn"]
+position = Vector2( 92, 23.625 )
+scale = Vector2( 0.856223, 0.626289 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Options_btn"]
+modulate = Color( 0.356863, 0.0784314, 0.545098, 1 )
+margin_left = 16.0
+margin_top = 17.0
+margin_right = 159.0
+margin_bottom = 48.0
+size_flags_vertical = 1
+text = "Opções"
+align = 1
+uppercase = true
+
+[node name="Exit_btn" type="Button" parent="CanvasLayer"]
+margin_left = 429.0
+margin_top = 495.0
+margin_right = 598.0
+margin_bottom = 539.0
+text = "Start"
+icon = SubResource( 1 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Exit_btn"]
+position = Vector2( 92, 23.625 )
+scale = Vector2( 0.856223, 0.626289 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Exit_btn"]
+modulate = Color( 0.356863, 0.0784314, 0.545098, 1 )
+margin_left = 16.0
+margin_top = 17.0
+margin_right = 159.0
+margin_bottom = 48.0
+size_flags_vertical = 1
+text = "SAIR"
+align = 1
+uppercase = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CanvasLayer"]
+position = Vector2( 505.744, 177.279 )
+scale = Vector2( 0.92292, 0.922423 )
+texture = ExtResource( 4 )
+
+[connection signal="mouse_entered" from="CanvasLayer/Start" to="CanvasLayer/Start" method="_on_Start_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Start" to="CanvasLayer/Start" method="_on_Start_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Start" to="CanvasLayer/Start" method="_on_Start_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Record_btn" to="CanvasLayer/Record_btn" method="_on_Record_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Record_btn" to="CanvasLayer/Record_btn" method="_on_Record_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Record_btn" to="CanvasLayer/Record_btn" method="_on_Record_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Options_btn" to="CanvasLayer/Options_btn" method="_on_Options_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Options_btn" to="CanvasLayer/Options_btn" method="_on_Options_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Options_btn" to="CanvasLayer/Options_btn" method="_on_Options_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Exit_btn" to="CanvasLayer/Exit_btn" method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Exit_btn" to="CanvasLayer/Exit_btn" method="_on_Exit_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Exit_btn" to="CanvasLayer/Exit_btn" method="_on_Exit_pressed"]
