@@ -6,7 +6,13 @@
 [node name="Cow" type="Node"]
 
 [node name="Cow" type="KinematicBody2D" parent="."]
+position = Vector2( 394, 288 )
+rotation = -0.0062182
+z_index = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Cow"]
+rotation = -1.56347
+scale = Vector2( 0.5, 0.5 )
+z_index = 2
 texture = ExtResource( 1 )

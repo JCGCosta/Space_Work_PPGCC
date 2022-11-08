@@ -5,8 +5,9 @@
 [node name="Planeta" type="Node"]
 
 [node name="Planeta" type="Area2D" parent="."]
+position = Vector2( 504, 304 )
 
 [node name="Sprite" type="Sprite" parent="Planeta"]
-position = Vector2( 0, 7.62939e-06 )
 scale = Vector2( 3, 3 )
+z_index = 2
 texture = ExtResource( 1 )

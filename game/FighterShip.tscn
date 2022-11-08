@@ -5,6 +5,11 @@
 [node name="FighterShip" type="Node"]
 
 [node name="FighterShip" type="KinematicBody2D" parent="."]
+position = Vector2( 506, 520 )
+rotation = -1.57079
+z_index = 2
 
 [node name="Sprite" type="Sprite" parent="FighterShip"]
+scale = Vector2( 0.6, 0.6 )
+z_index = 2
 texture = ExtResource( 1 )

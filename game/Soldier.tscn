@@ -5,6 +5,12 @@
 [node name="Soldier" type="Node"]
 
 [node name="Soldier" type="KinematicBody2D" parent="."]
+position = Vector2( 613, 312 )
+rotation = 1.56198
+scale = Vector2( 0.7, 0.7 )
+z_index = 2
 
 [node name="Sprite" type="Sprite" parent="Soldier"]
+scale = Vector2( 0.7, 0.7 )
+z_index = 2
 texture = ExtResource( 1 )

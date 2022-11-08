@@ -7,4 +7,6 @@
 [node name="Person" type="KinematicBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Person"]
+position = Vector2( 506, 196 )
+z_index = 2
 texture = ExtResource( 1 )
