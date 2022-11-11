@@ -44,4 +44,4 @@ func movement_loop(delta):
 
 	self.position = Vector2(sin(self.angle * speed) * value_orbit, cos(self.angle * speed) * value_orbit) + planet
 
-	$Sprite.rotation = self.planet.angle_to(self.position) 
+	$Sprite.rotation = -self.planet.angle_to_point(self.position)

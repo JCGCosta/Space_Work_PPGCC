@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/earth.png" type="Texture" id=1]
+[ext_resource path="res://planet/Planet.gd" type="Script" id=2]
 
 [node name="Planeta" type="Node"]
 
 [node name="Planeta" type="Area2D" parent="."]
 position = Vector2( 504, 304 )
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Planeta"]
 scale = Vector2( 3, 3 )

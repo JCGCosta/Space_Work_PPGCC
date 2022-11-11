@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Ship.gd" type="Script" id=1]
+[ext_resource path="res://ship/Ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/ship.png" type="Texture" id=2]
 
 [node name="Ship" type="Node"]

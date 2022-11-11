@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/back.png" type="Texture" id=2]
-[ext_resource path="res://Planeta.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Person.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Ship.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Chicken.tscn" type="PackedScene" id=6]
-[ext_resource path="res://FighterShip.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Soldier.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Cow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://planet/Planet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://person/Person.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ship/Ship.tscn" type="PackedScene" id=5]
+[ext_resource path="res://chicken/Chicken.tscn" type="PackedScene" id=6]
+[ext_resource path="res://fighter_ship/FighterShip.tscn" type="PackedScene" id=7]
+[ext_resource path="res://soldier/Soldier.tscn" type="PackedScene" id=8]
+[ext_resource path="res://cow/Cow.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D"]
 position = Vector2( 107, 288 )
