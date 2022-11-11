@@ -5,7 +5,7 @@
 [node name="FighterShip" type="Node"]
 
 [node name="FighterShip" type="KinematicBody2D" parent="."]
-position = Vector2( 506, 520 )
+position = Vector2( 506, 514 )
 rotation = -1.57079
 z_index = 2
 
