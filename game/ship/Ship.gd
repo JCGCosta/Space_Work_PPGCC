@@ -21,6 +21,7 @@ var controll = {
 func _physics_process(delta : float) -> void :
 	controll_loop()
 	movement_loop(delta)
+	rotate_to_target(delta)	
 
 func controll_loop():
 	self.controll['up'] = Input.is_action_pressed("ui_up")
@@ -48,3 +49,8 @@ func movement_loop(delta):
 
 	if(self.controll['down'] || self.controll['up'] || self.controll['right'] || self.controll['left']):
 		self.position = Vector2(sin(self.angle * speed) * value_orbit, cos(self.angle * speed) * value_orbit) + planet
+	
+func rotate_to_target(delta):
+	var direction = self.planet - self.position
+	var angleTo = $Sprite.transform.y.angle_to(direction)
+	$Sprite.rotate(sign(angleTo) * min (delta * speed, abs(angleTo)))
