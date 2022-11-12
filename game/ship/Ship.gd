@@ -1,17 +1,21 @@
 extends KinematicBody2D
 
-var angle := 90.0
+var angle := 30.0
 var speed := 2.0
+var capture_active = false
 var orbit_active = 1
 var radius_orbit_1 := 200.0
 var radius_orbit_2 : = 300.0
 var planet := Vector2(505,306)
 
+var p = get_parent()
+
 var controll = {
 	'up' : false,
 	'down': false,
 	'left': false,
-	'right': false	
+	'right': false,
+	'space': false
 }
 
 func _physics_process(delta : float) -> void :
@@ -42,6 +46,5 @@ func movement_loop(delta):
 	if(self.orbit_active == 2):
 		value_orbit = self.radius_orbit_2
 
-	self.position = Vector2(sin(self.angle * speed) * value_orbit, cos(self.angle * speed) * value_orbit) + planet
-
-	$Sprite.rotation = -self.planet.angle_to_point(self.position)
+	if(self.controll['down'] || self.controll['up'] || self.controll['right'] || self.controll['left']):
+		self.position = Vector2(sin(self.angle * speed) * value_orbit, cos(self.angle * speed) * value_orbit) + planet
