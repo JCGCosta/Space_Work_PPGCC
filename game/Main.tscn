@@ -4,11 +4,11 @@
 [ext_resource path="res://assets/back.png" type="Texture" id=2]
 [ext_resource path="res://planet/Planet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://person/Person.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ship/Ship.tscn" type="PackedScene" id=5]
 [ext_resource path="res://chicken/Chicken.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fighter_ship/FighterShip.tscn" type="PackedScene" id=7]
 [ext_resource path="res://soldier/Soldier.tscn" type="PackedScene" id=8]
 [ext_resource path="res://cow/Cow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ship/Ship.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D"]
 position = Vector2( 107, 288 )
@@ -27,8 +27,6 @@ offset = Vector2( 14, -12.7574 )
 
 [node name="Person" parent="Background" instance=ExtResource( 4 )]
 
-[node name="Ship" parent="Background" instance=ExtResource( 5 )]
-
 [node name="Cow" parent="Background" instance=ExtResource( 9 )]
 
 [node name="FighterShip" parent="Background" instance=ExtResource( 7 )]
@@ -36,3 +34,7 @@ offset = Vector2( 14, -12.7574 )
 [node name="Chicken" parent="Background" instance=ExtResource( 6 )]
 
 [node name="Soldier" parent="Background" instance=ExtResource( 8 )]
+
+[node name="Ship" parent="Background" instance=ExtResource( 10 )]
+position = Vector2( 510, 103 )
+z_index = 2
