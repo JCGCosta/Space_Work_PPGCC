@@ -17,6 +17,7 @@ var controll = {
 func _physics_process(delta : float) -> void :
 	controll_loop()
 	movement_loop(delta)
+	rotate_to_target(delta)	
 
 func controll_loop():
 	self.controll['up'] = Input.is_action_pressed("ui_up")
@@ -43,7 +44,6 @@ func movement_loop(delta):
 		value_orbit = self.radius_orbit_2
 
 	self.position = Vector2(sin(self.angle * speed) * value_orbit, cos(self.angle * speed) * value_orbit) + planet
-	self.rotate_to_target(delta)
 	
 func rotate_to_target(delta):
 	var direction = self.planet - self.position
