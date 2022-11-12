@@ -5,8 +5,8 @@ var speed := 2.0
 var capture_active = false
 var orbit_active = 1
 var radius_orbit_1 := 200.0
-var radius_orbit_2 : = 300.0
-var planet := Vector2(505,306)
+var radius_orbit_2 : = 250.0
+var planet := Vector2(512,288)
 
 var p = get_parent()
 
