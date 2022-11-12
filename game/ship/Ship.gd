@@ -43,5 +43,9 @@ func movement_loop(delta):
 		value_orbit = self.radius_orbit_2
 
 	self.position = Vector2(sin(self.angle * speed) * value_orbit, cos(self.angle * speed) * value_orbit) + planet
-
-	$Sprite.rotation = -self.planet.angle_to_point(self.position)
+	self.rotate_to_target(delta)
+	
+func rotate_to_target(delta):
+	var direction = self.planet - self.position
+	var angleTo = $Sprite.transform.y.angle_to(direction)
+	$Sprite.rotate(sign(angleTo) * min (delta * speed, abs(angleTo)))
