@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/back.png" type="Texture" id=2]
 [ext_resource path="res://planet/Planet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://person/Person.tscn" type="PackedScene" id=4]
+[ext_resource path="res://raio/Raio.tscn" type="PackedScene" id=5]
 [ext_resource path="res://chicken/Chicken.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fighter_ship/FighterShip.tscn" type="PackedScene" id=7]
 [ext_resource path="res://soldier/Soldier.tscn" type="PackedScene" id=8]
@@ -25,11 +26,11 @@ offset = Vector2( 14, -12.7574 )
 
 [node name="Planet" parent="Background" instance=ExtResource( 3 )]
 position = Vector2( 512, 288 )
-scale = Vector2( 3, 3 )
+scale = Vector2( 0.7, 0.7 )
 z_index = 2
 
 [node name="Person" parent="Background" instance=ExtResource( 4 )]
-position = Vector2( 512, 393 )
+position = Vector2( 514, 393 )
 rotation = -3.14159
 scale = Vector2( 0.8, 0.8 )
 z_index = 2
@@ -46,13 +47,13 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 2
 
 [node name="Chicken" parent="Background" instance=ExtResource( 6 )]
-position = Vector2( 613, 296 )
+position = Vector2( 618, 296 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 z_index = 2
 
 [node name="Soldier" parent="Background" instance=ExtResource( 8 )]
-position = Vector2( 413, 296 )
+position = Vector2( 411, 296 )
 rotation = -1.5708
 scale = Vector2( 0.4, 0.4 )
 z_index = 2
@@ -60,4 +61,9 @@ z_index = 2
 [node name="Ship" parent="Background" instance=ExtResource( 10 )]
 position = Vector2( 512, 103 )
 scale = Vector2( 0.5, 0.5 )
+z_index = 2
+
+[node name="Raio" parent="Background" instance=ExtResource( 5 )]
+position = Vector2( 513, 149 )
+scale = Vector2( 0.7, 1 )
 z_index = 2
