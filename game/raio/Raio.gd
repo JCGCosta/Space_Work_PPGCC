@@ -9,14 +9,19 @@ var radius_orbit_1 := 145.0
 var radius_orbit_2 : = 195.0
 var planet := Vector2(512,288)
 
-var p = get_parent()
-
 var controll = {
 	'up' : false,
 	'down': false,
 	'left': false,
 	'right': false,
 	'space': false
+}
+
+var captured = {
+	'cow': false,
+	'person': false,
+	'soldier': false,
+	'chicken': false
 }
 
 func _physics_process(delta : float) -> void :
@@ -67,3 +72,9 @@ func verify_raio():
 		return
 
 	$Sprite.show()
+
+func _on_ColisaoCow_body_entered(body):
+	self.captured['cow'] = true   
+
+func _on_ColisaoCow_body_exited(body):
+	self.captured['cow'] = false
