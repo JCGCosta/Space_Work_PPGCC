@@ -1,5 +1,11 @@
 extends KinematicBody2D
 
+var person setget set_person
+var cow setget set_cow
+var fighterShip setget set_fighterShip
+var chicken setget set_chicken
+var soldier setget set_soldier
+
 var angle := 30.0
 var speed := 2.0
 var capture_active = false
@@ -52,4 +58,20 @@ func movement_loop(delta):
 func rotate_to_target(delta):
 	var direction = self.planet - self.position
 	var angleTo = $Sprite.transform.y.angle_to(direction)
+
 	$Sprite.rotate(sign(angleTo) * min (delta * speed, abs(angleTo)))
+
+func set_person(value):
+	person = value
+
+func set_cow(value):
+	cow = value
+
+func set_fighterShip(value):
+	fighterShip = value
+
+func set_chicken(value):
+	chicken = value
+
+func set_soldier(value):
+	soldier = value
