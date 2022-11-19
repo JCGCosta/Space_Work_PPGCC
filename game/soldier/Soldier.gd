@@ -38,8 +38,7 @@ func reset():
 	self.position = positionInitial
 
 func die():
-	print('CAPTUROU')
-	# colocar no score os pontos da vaca
+	Global.score += self.pointsScore
 	queue_free()
 
 func set_raio(value):

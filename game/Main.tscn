@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/back.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://cow/Cow.tscn" type="PackedScene" id=9]
 [ext_resource path="res://ship/Ship.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Background.gd" type="Script" id=11]
+[ext_resource path="res://Score.gd" type="Script" id=12]
+[ext_resource path="res://Vida.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 52 )
@@ -34,7 +36,6 @@ script = ExtResource( 11 )
 [node name="Sprite" type="Sprite" parent="Background"]
 position = Vector2( 505, 306 )
 scale = Vector2( 0.5, 0.391927 )
-z_index = 1
 texture = ExtResource( 2 )
 offset = Vector2( 14, -12.7574 )
 
@@ -81,6 +82,41 @@ z_index = 2
 position = Vector2( 513, 149 )
 scale = Vector2( 0.8, 1 )
 z_index = 2
+
+[node name="Header" type="CanvasLayer" parent="Background"]
+
+[node name="Score" type="Node" parent="Background/Header"]
+
+[node name="LabelScore" type="Label" parent="Background/Header/Score"]
+margin_left = 928.0
+margin_top = 8.0
+margin_right = 968.0
+margin_bottom = 22.0
+text = "Score:"
+percent_visible = -0.166667
+
+[node name="Score" type="Label" parent="Background/Header/Score"]
+margin_left = 976.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 22.0
+script = ExtResource( 12 )
+
+[node name="Life" type="Node" parent="Background/Header"]
+
+[node name="LabelVidas" type="Label" parent="Background/Header/Life"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 22.0
+text = "Vidas:"
+
+[node name="Vida" type="Label" parent="Background/Header/Life"]
+margin_left = 56.0
+margin_top = 8.0
+margin_right = 96.0
+margin_bottom = 22.0
+script = ExtResource( 13 )
 
 [node name="Colisoes" type="Node" parent="."]
 
