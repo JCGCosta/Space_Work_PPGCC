@@ -11,10 +11,8 @@ var speed := 2.0
 var capture_active = false
 var orbit_active = 1
 var radius_orbit_1 := 200.0
-var radius_orbit_2 : = 250.0
+var radius_orbit_2 : = 290.0
 var planet := Vector2(512,288)
-
-var p = get_parent()
 
 var controll = {
 	'up' : false,
@@ -60,6 +58,9 @@ func rotate_to_target(delta):
 	var angleTo = $Sprite.transform.y.angle_to(direction)
 
 	$Sprite.rotate(sign(angleTo) * min (delta * speed, abs(angleTo)))
+
+func die():
+	get_tree().change_scene("res://gameover/GameOver.tscn")
 
 func set_person(value):
 	person = value

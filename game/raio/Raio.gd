@@ -5,7 +5,7 @@ var speed := 2.0
 var orbit_active = 1
 var raio_active = false
 var radius_orbit_1 := 145.0
-var radius_orbit_2 : = 195.0
+var radius_orbit_2 : = 235.0
 var planet := Vector2(512,288)
 
 var controll = {
