@@ -76,10 +76,10 @@ align = 1
 valign = 1
 
 [node name="Score" type="Label" parent="CanvasLayer"]
-margin_left = 540.0
-margin_top = 284.0
-margin_right = 580.0
-margin_bottom = 298.0
+margin_left = 532.0
+margin_top = 285.0
+margin_right = 572.0
+margin_bottom = 299.0
 rect_scale = Vector2( 2, 2 )
 valign = 1
 script = ExtResource( 5 )
