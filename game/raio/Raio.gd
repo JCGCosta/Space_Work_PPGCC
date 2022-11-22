@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 var angle := 30.0
 var speed := 2.0
-var capture_active = false
 var orbit_active = 1
 var raio_active = false
 var radius_orbit_1 := 145.0
@@ -16,21 +15,6 @@ var controll = {
 	'right': false,
 	'space': false
 }
-
-var captured = {
-	'cow': false,
-	'person': false,
-	'soldier': false,
-	'chicken': false
-}
-
-func _ready():
-	yield(get_tree().create_timer(0.5), "timeout")
-
-	self.captured['cow'] = true
-	self.captured['person'] = false
-	self.captured['soldier'] = false
-	self.captured['chicken'] = false
 
 func _physics_process(delta : float) -> void :
 	controll_loop()
@@ -80,27 +64,3 @@ func verify_raio():
 		return
 
 	$Sprite.show()
-
-func _on_ColisaoCow_body_entered(body):
-	self.captured['cow'] = true
-
-func _on_ColisaoCow_body_exited(body):
-	self.captured['cow'] = false
-
-func _on_ColisaoSoldier_body_entered(body):
-	self.captured['soldier'] = true
-
-func _on_ColisaoSoldier_body_exited(body):
-	self.captured['soldier'] = false
-
-func _on_ColisaoPerson_body_entered(body):
-	self.captured['person'] = true
-
-func _on_ColisaoPerson_body_exited(body):
-	self.captured['person'] = false
-
-func _on_ColisaoChicken_body_entered(body):
-	self.captured['chicken'] = true
-
-func _on_ColisaoChicken_body_exited(body):
-	self.captured['chicken'] = false
