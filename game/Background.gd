@@ -1,30 +1,34 @@
 extends CanvasLayer
 
-func _ready():
-	# Substituir essa parte para criação dinamica
+export var clock = 200
+var clockAtt = 0
+var rng = RandomNumberGenerator.new()
 
-	$Cow.ship = $Ship
-	$Cow.raio = $Raio
-	
-	$Person.ship = $Ship
-	$Person.raio = $Raio
-	
+func _ready():
+	create_cow()
+	create_chicken()
+	create_person()
+	create_soldier()
+
 	$FighterShip.ship = $Ship
 	$FighterShip.raio = $Raio
-	
-	$Chicken.ship = $Ship
-	$Chicken.raio = $Raio
-	
-	$Soldier.ship = $Ship
-	$Soldier.raio = $Raio
 
 func _process(delta):
-	# idea é que a cada X clock de CPU rodar a criação dos elementos na tela
-	# pode ser todos ou um por um (da para usar um random para escolher qual criar)
-	pass
+	clockAtt += 1
 
-# Essas criações aqui é necessário criar uma função nos arquivos de cada inimigo
-# para adicionar em vários lugares do planeta
+	if(clockAtt % clock == 0):
+		rng.randomize()
+		var opcao = rng.randi_range(1, 4)
+
+		if(opcao == 1):
+			create_chicken()
+		if(opcao == 2):
+			create_cow()
+		if(opcao == 3):
+			create_person()
+		if(opcao == 4):
+			create_soldier()
+
 func create_cow():
 	var scene = load('res://cow/Cow.tscn')
 	var cow = scene.instance()

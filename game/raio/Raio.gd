@@ -6,7 +6,6 @@ var orbit_active = 1
 var raio_active = false
 var radius_orbit_1 := 145.0
 var radius_orbit_2 : = 235.0
-var planet := Vector2(512,288)
 
 var controll = {
 	'up' : false,
@@ -48,10 +47,10 @@ func movement_loop(delta):
 		value_orbit = self.radius_orbit_2
 
 	if(self.controll['down'] || self.controll['up'] || self.controll['right'] || self.controll['left']):
-		self.position = Vector2(sin(self.angle * speed) * value_orbit, cos(self.angle * speed) * value_orbit) + planet
+		self.position = Vector2(sin(self.angle * speed) * value_orbit, cos(self.angle * speed) * value_orbit) + Global.planet
 
 func rotate_to_target(delta):
-	var direction = self.planet - self.position
+	var direction = Global.planet - self.position
 	var angleTo = $Sprite.transform.y.angle_to(direction)
 
 	$Sprite.rotate(sign(angleTo) * min (delta * speed, abs(angleTo)))

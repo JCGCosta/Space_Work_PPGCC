@@ -8,11 +8,21 @@ var positionInitial = Vector2(0, 0)
 var velocity = Vector2()
 var speed = 35
 var pointsScore = 4
+var rng = RandomNumberGenerator.new()
 
 func _ready():
+	rng.randomize()
+
+	var angle = rng.randi_range(0, 100)
+
+	self.scale = Vector2(0.4, 0.4)
+	self.position = Vector2(sin(angle) * Global.planet_orbit, cos(angle) * Global.planet_orbit) + Global.planet	
+
 	positionInitial = self.position
 
 func _physics_process(delta):
+	Global.rotate_to_target(delta, self, $Sprite)
+
 	if(ship && raio && raio.raio_active && self.abduzir):
 		capturar(delta)
 
@@ -32,7 +42,10 @@ func capturar(delta):
 	if(ship.position.x < self.position.x):
 		self.position.x -= speed * delta
 		
-	if(abs(ship.position.x - self.position.x) < 30):
+	var distanceShip = ship.position - self.position
+	distanceShip = Vector2(abs(distanceShip.x), abs(distanceShip.y))	
+
+	if(distanceShip < Vector2(20, 20)):
 		die()
 
 func reset():

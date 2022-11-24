@@ -7,7 +7,6 @@ var angle := 180.0
 var speed := 1.0
 var capture_active = false
 var radius_orbit := 200.0
-var planet := Vector2(512,288)
 
 func _physics_process(delta):
 	movement_loop(delta)
@@ -15,10 +14,10 @@ func _physics_process(delta):
 
 func movement_loop(delta):
 	self.angle += delta
-	self.position = Vector2(sin(self.angle * speed) * self.radius_orbit, cos(self.angle * speed) * self.radius_orbit) + planet
+	self.position = Vector2(sin(self.angle * speed) * self.radius_orbit, cos(self.angle * speed) * self.radius_orbit) + Global.planet
 
 func rotate_to_target(delta):
-	var direction = self.planet - self.position
+	var direction = Global.planet - self.position
 	var angleTo = $Sprite.transform.x.angle_to(direction)
 
 	$Sprite.rotate(sign(angleTo) * min (delta * speed, abs(angleTo)))
