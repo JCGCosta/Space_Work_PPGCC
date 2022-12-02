@@ -16,7 +16,7 @@ func _ready():
 	var angle = rng.randi_range(0, 100)
 
 	self.scale = Vector2(0.8, 0.8)
-	self.position = Vector2(sin(angle) * Global.planet_orbit, cos(angle) * Global.planet_orbit) + Global.planet	
+	self.position = Vector2(sin(angle) * (Global.planet_orbit - 7), cos(angle) * (Global.planet_orbit - 7)) + Global.planet	
 
 	positionInitial = self.position
 
