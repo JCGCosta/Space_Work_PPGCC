@@ -4,8 +4,14 @@ func _on_JogarNovamenteButton_pressed():
 	$Sprite.modulate.r = 0.6
 	$Sprite.modulate.g = 0.6
 	$Sprite.modulate.b = 0.6
-	get_tree().change_scene("res://Main.tscn")
 
+	if(Global.lifes == 0):
+		Global.lifes = 3
+		Global.score = 0
+	else:
+		Global.lifes -= 1
+
+	get_tree().change_scene("res://Main.tscn")
 
 func _on_JogarNovamenteButton_mouse_entered():
 	$Sprite.modulate.r = 0.8

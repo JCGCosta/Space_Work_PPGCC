@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/back.png" type="Texture" id=1]
 [ext_resource path="res://assets/button.png" type="Texture" id=2]
 [ext_resource path="res://gameover/VoltarButton.gd" type="Script" id=3]
 [ext_resource path="res://gameover/JogarNovamenteButton.gd" type="Script" id=4]
 [ext_resource path="res://gameover/Score.gd" type="Script" id=5]
+[ext_resource path="res://gameover/Vida.gd" type="Script" id=6]
 
 [node name="GameOver" type="Node"]
 
@@ -83,6 +84,22 @@ margin_bottom = 297.0
 rect_scale = Vector2( 2, 2 )
 valign = 1
 script = ExtResource( 5 )
+
+[node name="LabelVida" type="Label" parent="CanvasLayer"]
+margin_left = 459.0
+margin_top = 314.0
+margin_right = 499.0
+margin_bottom = 328.0
+rect_scale = Vector2( 2, 2 )
+text = "Vidas:"
+
+[node name="Vida" type="Label" parent="CanvasLayer"]
+margin_left = 545.0
+margin_top = 313.0
+margin_right = 585.0
+margin_bottom = 327.0
+rect_scale = Vector2( 2, 2 )
+script = ExtResource( 6 )
 
 [connection signal="mouse_entered" from="CanvasLayer/JogarNovamenteButton" to="CanvasLayer/JogarNovamenteButton" method="_on_JogarNovamenteButton_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/JogarNovamenteButton" to="CanvasLayer/JogarNovamenteButton" method="_on_JogarNovamenteButton_mouse_exited"]

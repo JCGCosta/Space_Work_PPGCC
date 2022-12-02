@@ -32,20 +32,19 @@ func _physics_process(delta):
 func capturar(delta):
 	if(ship.position.y > self.position.y):
 		self.position.y += speed * delta
-		
+
 	if(ship.position.x > self.position.x):
 		self.position.x += speed * delta
 
 	if(ship.position.y < self.position.y):
 		self.position.y -= speed * delta
-		
+
 	if(ship.position.x < self.position.x):
 		self.position.x -= speed * delta
-		
-	var distanceShip = ship.position - self.position
-	distanceShip = Vector2(abs(distanceShip.x), abs(distanceShip.y))	
 
-	if(distanceShip < Vector2(20, 20)):
+	var distanceShip = ship.position - self.position
+
+	if(abs(distanceShip.x) < 20 && abs(distanceShip.y) < 20):
 		die()
 
 func reset():

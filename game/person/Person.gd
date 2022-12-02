@@ -43,9 +43,8 @@ func capturar(delta):
 		self.position.x -= speed * delta
 
 	var distanceShip = ship.position - self.position
-	distanceShip = Vector2(abs(distanceShip.x), abs(distanceShip.y))	
 
-	if(distanceShip < Vector2(20, 20)):
+	if(abs(distanceShip.x) < 20 && abs(distanceShip.y) < 20):
 		die()
 
 func reset():
