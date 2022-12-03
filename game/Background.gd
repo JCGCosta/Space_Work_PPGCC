@@ -9,9 +9,10 @@ func _ready():
 	create_chicken()
 	create_person()
 	create_soldier()
-
-	$FighterShip.ship = $Ship
-	$FighterShip.raio = $Raio
+	create_fighter_ship(1)
+	
+	if(Global.fase == 2):
+		create_fighter_ship(2)
 
 func _process(delta):
 	clockAtt += 1
@@ -28,6 +29,16 @@ func _process(delta):
 			create_person()
 		if(opcao == 4):
 			create_soldier()
+
+func create_fighter_ship(orbit):
+	var scene = load('res://fighter_ship/FighterShip.tscn')
+	var fighter = scene.instance()
+
+	fighter.ship = $Ship
+	fighter.raio = $Raio
+	fighter.orbit = orbit
+
+	add_child(fighter)
 
 func create_cow():
 	var scene = load('res://cow/Cow.tscn')

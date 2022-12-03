@@ -1,6 +1,6 @@
 extends Label
 
-func _process(delta):
+func _ready():
 	if(Global.venceu):
 		self.text = 'Você venceu!'
 		return

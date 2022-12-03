@@ -11,6 +11,15 @@ func _on_JogarNovamenteButton_pressed():
 	else:
 		Global.lifes -= 1
 
+	if(Global.venceu && Global.fase == 2):
+		Global.score = 0
+		Global.lifes = 3
+		Global.fase = 1
+
+	if(Global.venceu && Global.fase == 1):
+		Global.fase = 2
+		Global.score = 0
+
 	get_tree().change_scene("res://Main.tscn")
 
 func _on_JogarNovamenteButton_mouse_entered():

@@ -1,7 +1,10 @@
 extends Label
 
 func _ready():
-	if(Global.lifes > 1 && !Global.venceu):
-		self.text = 'Continuar jogando'
+	if(Global.venceu && Global.fase == 1):
+		self.text = 'Próxima fase'
 	else:
-		self.text = 'Jogar novamente'
+		if(Global.lifes > 1 && !Global.venceu):
+			self.text = 'Continuar jogando'
+		else:
+			self.text = 'Jogar novamente'
