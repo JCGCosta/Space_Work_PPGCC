@@ -8,7 +8,9 @@ func _on_JogarNovamenteButton_pressed():
 	if(Global.lifes == 0):
 		Global.lifes = 3
 		Global.score = 0
-	else:
+		Global.fase = 1
+
+	if(!Global.venceu):
 		Global.lifes -= 1
 
 	if(Global.venceu && Global.fase == 2):
@@ -17,6 +19,7 @@ func _on_JogarNovamenteButton_pressed():
 		Global.fase = 1
 
 	if(Global.venceu && Global.fase == 1):
+		Global.venceu = false
 		Global.fase = 2
 		Global.score = 0
 

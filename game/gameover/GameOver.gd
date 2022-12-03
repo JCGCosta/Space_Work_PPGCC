@@ -5,7 +5,7 @@ func _ready():
 		self.text = 'Você venceu!'
 		return
 	
-	if(Global.lifes > 1):
+	if(Global.lifes > 0):
 		self.text = 'Você morreu!'
 		return
 		
