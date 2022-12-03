@@ -4,6 +4,7 @@ var planet_orbit := 115.0
 var planet := Vector2(512,288)
 var score = 0
 var lifes = 3
+var venceu = false
 var scores = []
 
 func rotate_to_target(delta, element, sprite):
